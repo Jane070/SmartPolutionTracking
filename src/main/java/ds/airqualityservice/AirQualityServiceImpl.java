@@ -30,15 +30,10 @@ public final class AirQualityServiceImpl {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_airquality_GetHistoricalDataRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_airquality_AirQualityReading_descriptor;
+    internal_static_airquality_GetHistoricalDataResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_airquality_AirQualityReading_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_airquality_Alert_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_airquality_Alert_fieldAccessorTable;
+      internal_static_airquality_GetHistoricalDataResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -48,27 +43,20 @@ public final class AirQualityServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027airqualityservice.proto\022\nairquality\",\n" +
-      "\027GetLatestReadingRequest\022\021\n\tsensor_id\030\001 " +
-      "\001(\t\"J\n\030GetLatestReadingResponse\022.\n\007readi" +
-      "ng\030\001 \001(\0132\035.airquality.AirQualityReading\"" +
-      "?\n\030GetHistoricalDataRequest\022\021\n\tsensor_id" +
-      "\030\001 \001(\t\022\020\n\010num_days\030\002 \001(\005\"\227\001\n\021AirQualityR" +
-      "eading\022\021\n\tsensor_id\030\001 \001(\t\022\r\n\005pm2_5\030\002 \001(\002" +
-      "\022\014\n\004pm10\030\003 \001(\002\022\r\n\005ozone\030\004 \001(\002\022\030\n\020nitroge" +
-      "n_dioxide\030\005 \001(\002\022\026\n\016sulfur_dioxide\030\006 \001(\002\022" +
-      "\021\n\ttimestamp\030\007 \001(\003\"\234\001\n\005Alert\022\021\n\tsensor_i" +
-      "d\030\001 \001(\t\022\r\n\005pm2_5\030\002 \001(\002\022\014\n\004pm10\030\003 \001(\002\022\r\n\005" +
-      "ozone\030\004 \001(\002\022\030\n\020nitrogen_dioxide\030\005 \001(\002\022\026\n" +
-      "\016sulfur_dioxide\030\006 \001(\002\022\021\n\ttimestamp\030\007 \001(\003" +
-      "\022\017\n\007message\030\010 \001(\t2\322\001\n\021AirQualityService\022" +
-      "_\n\020GetLatestReading\022#.airquality.GetLate" +
-      "stReadingRequest\032$.airquality.GetLatestR" +
-      "eadingResponse\"\000\022\\\n\021GetHistoricalData\022$." +
-      "airquality.GetHistoricalDataRequest\032\035.ai" +
-      "rquality.AirQualityReading\"\0000\001B/\n\024ds.air" +
-      "qualityserviceB\025AirQualityServiceImplP\001b" +
-      "\006proto3"
+      "\n\027airqualityservice.proto\022\nairquality\"0\n" +
+      "\027GetLatestReadingRequest\022\025\n\rlatestreadin" +
+      "g\030\001 \001(\t\")\n\030GetLatestReadingResponse\022\r\n\005p" +
+      "m2_5\030\001 \001(\005\"C\n\030GetHistoricalDataRequest\022\025" +
+      "\n\rlatestreading\030\001 \001(\t\022\020\n\010num_days\030\002 \001(\005\"" +
+      "=\n\031GetHistoricalDataResponse\022\021\n\tsensor_i" +
+      "d\030\001 \001(\t\022\r\n\005pm2_5\030\002 \001(\0022\332\001\n\021AirQualitySer" +
+      "vice\022_\n\020GetLatestReading\022#.airquality.Ge" +
+      "tLatestReadingRequest\032$.airquality.GetLa" +
+      "testReadingResponse\"\000\022d\n\021GetHistoricalDa" +
+      "ta\022$.airquality.GetHistoricalDataRequest" +
+      "\032%.airquality.GetHistoricalDataResponse\"" +
+      "\0000\001B/\n\024ds.airqualityserviceB\025AirQualityS" +
+      "erviceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -87,31 +75,25 @@ public final class AirQualityServiceImpl {
     internal_static_airquality_GetLatestReadingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_airquality_GetLatestReadingRequest_descriptor,
-        new java.lang.String[] { "SensorId", });
+        new java.lang.String[] { "Latestreading", });
     internal_static_airquality_GetLatestReadingResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_airquality_GetLatestReadingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_airquality_GetLatestReadingResponse_descriptor,
-        new java.lang.String[] { "Reading", });
+        new java.lang.String[] { "Pm25", });
     internal_static_airquality_GetHistoricalDataRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_airquality_GetHistoricalDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_airquality_GetHistoricalDataRequest_descriptor,
-        new java.lang.String[] { "SensorId", "NumDays", });
-    internal_static_airquality_AirQualityReading_descriptor =
+        new java.lang.String[] { "Latestreading", "NumDays", });
+    internal_static_airquality_GetHistoricalDataResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_airquality_AirQualityReading_fieldAccessorTable = new
+    internal_static_airquality_GetHistoricalDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_airquality_AirQualityReading_descriptor,
-        new java.lang.String[] { "SensorId", "Pm25", "Pm10", "Ozone", "NitrogenDioxide", "SulfurDioxide", "Timestamp", });
-    internal_static_airquality_Alert_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_airquality_Alert_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_airquality_Alert_descriptor,
-        new java.lang.String[] { "SensorId", "Pm25", "Pm10", "Ozone", "NitrogenDioxide", "SulfurDioxide", "Timestamp", "Message", });
+        internal_static_airquality_GetHistoricalDataResponse_descriptor,
+        new java.lang.String[] { "SensorId", "Pm25", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

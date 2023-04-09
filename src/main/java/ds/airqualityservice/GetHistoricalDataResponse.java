@@ -4,26 +4,20 @@
 package ds.airqualityservice;
 
 /**
- * Protobuf type {@code airquality.Alert}
+ * Protobuf type {@code airquality.GetHistoricalDataResponse}
  */
-public  final class Alert extends
+public  final class GetHistoricalDataResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:airquality.Alert)
-    AlertOrBuilder {
+    // @@protoc_insertion_point(message_implements:airquality.GetHistoricalDataResponse)
+    GetHistoricalDataResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use Alert.newBuilder() to construct.
-  private Alert(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetHistoricalDataResponse.newBuilder() to construct.
+  private GetHistoricalDataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Alert() {
+  private GetHistoricalDataResponse() {
     sensorId_ = "";
     pm25_ = 0F;
-    pm10_ = 0F;
-    ozone_ = 0F;
-    nitrogenDioxide_ = 0F;
-    sulfurDioxide_ = 0F;
-    timestamp_ = 0L;
-    message_ = "";
   }
 
   @java.lang.Override
@@ -31,7 +25,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Alert(
+  private GetHistoricalDataResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -61,37 +55,6 @@ private static final long serialVersionUID = 0L;
             pm25_ = input.readFloat();
             break;
           }
-          case 29: {
-
-            pm10_ = input.readFloat();
-            break;
-          }
-          case 37: {
-
-            ozone_ = input.readFloat();
-            break;
-          }
-          case 45: {
-
-            nitrogenDioxide_ = input.readFloat();
-            break;
-          }
-          case 53: {
-
-            sulfurDioxide_ = input.readFloat();
-            break;
-          }
-          case 56: {
-
-            timestamp_ = input.readInt64();
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            message_ = s;
-            break;
-          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -113,15 +76,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_Alert_descriptor;
+    return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_GetHistoricalDataResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_Alert_fieldAccessorTable
+    return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_GetHistoricalDataResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ds.airqualityservice.Alert.class, ds.airqualityservice.Alert.Builder.class);
+            ds.airqualityservice.GetHistoricalDataResponse.class, ds.airqualityservice.GetHistoricalDataResponse.Builder.class);
   }
 
   public static final int SENSOR_ID_FIELD_NUMBER = 1;
@@ -167,85 +130,6 @@ private static final long serialVersionUID = 0L;
     return pm25_;
   }
 
-  public static final int PM10_FIELD_NUMBER = 3;
-  private float pm10_;
-  /**
-   * <code>float pm10 = 3;</code>
-   */
-  public float getPm10() {
-    return pm10_;
-  }
-
-  public static final int OZONE_FIELD_NUMBER = 4;
-  private float ozone_;
-  /**
-   * <code>float ozone = 4;</code>
-   */
-  public float getOzone() {
-    return ozone_;
-  }
-
-  public static final int NITROGEN_DIOXIDE_FIELD_NUMBER = 5;
-  private float nitrogenDioxide_;
-  /**
-   * <code>float nitrogen_dioxide = 5;</code>
-   */
-  public float getNitrogenDioxide() {
-    return nitrogenDioxide_;
-  }
-
-  public static final int SULFUR_DIOXIDE_FIELD_NUMBER = 6;
-  private float sulfurDioxide_;
-  /**
-   * <code>float sulfur_dioxide = 6;</code>
-   */
-  public float getSulfurDioxide() {
-    return sulfurDioxide_;
-  }
-
-  public static final int TIMESTAMP_FIELD_NUMBER = 7;
-  private long timestamp_;
-  /**
-   * <code>int64 timestamp = 7;</code>
-   */
-  public long getTimestamp() {
-    return timestamp_;
-  }
-
-  public static final int MESSAGE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object message_;
-  /**
-   * <code>string message = 8;</code>
-   */
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      message_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string message = 8;</code>
-   */
-  public com.google.protobuf.ByteString
-      getMessageBytes() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      message_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -266,24 +150,6 @@ private static final long serialVersionUID = 0L;
     if (pm25_ != 0F) {
       output.writeFloat(2, pm25_);
     }
-    if (pm10_ != 0F) {
-      output.writeFloat(3, pm10_);
-    }
-    if (ozone_ != 0F) {
-      output.writeFloat(4, ozone_);
-    }
-    if (nitrogenDioxide_ != 0F) {
-      output.writeFloat(5, nitrogenDioxide_);
-    }
-    if (sulfurDioxide_ != 0F) {
-      output.writeFloat(6, sulfurDioxide_);
-    }
-    if (timestamp_ != 0L) {
-      output.writeInt64(7, timestamp_);
-    }
-    if (!getMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, message_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -300,29 +166,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, pm25_);
     }
-    if (pm10_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(3, pm10_);
-    }
-    if (ozone_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(4, ozone_);
-    }
-    if (nitrogenDioxide_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(5, nitrogenDioxide_);
-    }
-    if (sulfurDioxide_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(6, sulfurDioxide_);
-    }
-    if (timestamp_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, timestamp_);
-    }
-    if (!getMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, message_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -333,10 +176,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ds.airqualityservice.Alert)) {
+    if (!(obj instanceof ds.airqualityservice.GetHistoricalDataResponse)) {
       return super.equals(obj);
     }
-    ds.airqualityservice.Alert other = (ds.airqualityservice.Alert) obj;
+    ds.airqualityservice.GetHistoricalDataResponse other = (ds.airqualityservice.GetHistoricalDataResponse) obj;
 
     boolean result = true;
     result = result && getSensorId()
@@ -345,26 +188,6 @@ private static final long serialVersionUID = 0L;
         java.lang.Float.floatToIntBits(getPm25())
         == java.lang.Float.floatToIntBits(
             other.getPm25()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPm10())
-        == java.lang.Float.floatToIntBits(
-            other.getPm10()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getOzone())
-        == java.lang.Float.floatToIntBits(
-            other.getOzone()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getNitrogenDioxide())
-        == java.lang.Float.floatToIntBits(
-            other.getNitrogenDioxide()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getSulfurDioxide())
-        == java.lang.Float.floatToIntBits(
-            other.getSulfurDioxide()));
-    result = result && (getTimestamp()
-        == other.getTimestamp());
-    result = result && getMessage()
-        .equals(other.getMessage());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -381,91 +204,74 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PM2_5_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getPm25());
-    hash = (37 * hash) + PM10_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getPm10());
-    hash = (37 * hash) + OZONE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getOzone());
-    hash = (37 * hash) + NITROGEN_DIOXIDE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getNitrogenDioxide());
-    hash = (37 * hash) + SULFUR_DIOXIDE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getSulfurDioxide());
-    hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTimestamp());
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static ds.airqualityservice.Alert parseFrom(
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ds.airqualityservice.Alert parseFrom(
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ds.airqualityservice.Alert parseFrom(
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ds.airqualityservice.Alert parseFrom(
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ds.airqualityservice.Alert parseFrom(byte[] data)
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ds.airqualityservice.Alert parseFrom(
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ds.airqualityservice.Alert parseFrom(java.io.InputStream input)
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ds.airqualityservice.Alert parseFrom(
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ds.airqualityservice.Alert parseDelimitedFrom(java.io.InputStream input)
+  public static ds.airqualityservice.GetHistoricalDataResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ds.airqualityservice.Alert parseDelimitedFrom(
+  public static ds.airqualityservice.GetHistoricalDataResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ds.airqualityservice.Alert parseFrom(
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ds.airqualityservice.Alert parseFrom(
+  public static ds.airqualityservice.GetHistoricalDataResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -478,7 +284,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ds.airqualityservice.Alert prototype) {
+  public static Builder newBuilder(ds.airqualityservice.GetHistoricalDataResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -494,26 +300,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code airquality.Alert}
+   * Protobuf type {@code airquality.GetHistoricalDataResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:airquality.Alert)
-      ds.airqualityservice.AlertOrBuilder {
+      // @@protoc_insertion_point(builder_implements:airquality.GetHistoricalDataResponse)
+      ds.airqualityservice.GetHistoricalDataResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_Alert_descriptor;
+      return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_GetHistoricalDataResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_Alert_fieldAccessorTable
+      return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_GetHistoricalDataResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ds.airqualityservice.Alert.class, ds.airqualityservice.Alert.Builder.class);
+              ds.airqualityservice.GetHistoricalDataResponse.class, ds.airqualityservice.GetHistoricalDataResponse.Builder.class);
     }
 
-    // Construct using ds.airqualityservice.Alert.newBuilder()
+    // Construct using ds.airqualityservice.GetHistoricalDataResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -535,35 +341,23 @@ private static final long serialVersionUID = 0L;
 
       pm25_ = 0F;
 
-      pm10_ = 0F;
-
-      ozone_ = 0F;
-
-      nitrogenDioxide_ = 0F;
-
-      sulfurDioxide_ = 0F;
-
-      timestamp_ = 0L;
-
-      message_ = "";
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_Alert_descriptor;
+      return ds.airqualityservice.AirQualityServiceImpl.internal_static_airquality_GetHistoricalDataResponse_descriptor;
     }
 
     @java.lang.Override
-    public ds.airqualityservice.Alert getDefaultInstanceForType() {
-      return ds.airqualityservice.Alert.getDefaultInstance();
+    public ds.airqualityservice.GetHistoricalDataResponse getDefaultInstanceForType() {
+      return ds.airqualityservice.GetHistoricalDataResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public ds.airqualityservice.Alert build() {
-      ds.airqualityservice.Alert result = buildPartial();
+    public ds.airqualityservice.GetHistoricalDataResponse build() {
+      ds.airqualityservice.GetHistoricalDataResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -571,16 +365,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public ds.airqualityservice.Alert buildPartial() {
-      ds.airqualityservice.Alert result = new ds.airqualityservice.Alert(this);
+    public ds.airqualityservice.GetHistoricalDataResponse buildPartial() {
+      ds.airqualityservice.GetHistoricalDataResponse result = new ds.airqualityservice.GetHistoricalDataResponse(this);
       result.sensorId_ = sensorId_;
       result.pm25_ = pm25_;
-      result.pm10_ = pm10_;
-      result.ozone_ = ozone_;
-      result.nitrogenDioxide_ = nitrogenDioxide_;
-      result.sulfurDioxide_ = sulfurDioxide_;
-      result.timestamp_ = timestamp_;
-      result.message_ = message_;
       onBuilt();
       return result;
     }
@@ -619,41 +407,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ds.airqualityservice.Alert) {
-        return mergeFrom((ds.airqualityservice.Alert)other);
+      if (other instanceof ds.airqualityservice.GetHistoricalDataResponse) {
+        return mergeFrom((ds.airqualityservice.GetHistoricalDataResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ds.airqualityservice.Alert other) {
-      if (other == ds.airqualityservice.Alert.getDefaultInstance()) return this;
+    public Builder mergeFrom(ds.airqualityservice.GetHistoricalDataResponse other) {
+      if (other == ds.airqualityservice.GetHistoricalDataResponse.getDefaultInstance()) return this;
       if (!other.getSensorId().isEmpty()) {
         sensorId_ = other.sensorId_;
         onChanged();
       }
       if (other.getPm25() != 0F) {
         setPm25(other.getPm25());
-      }
-      if (other.getPm10() != 0F) {
-        setPm10(other.getPm10());
-      }
-      if (other.getOzone() != 0F) {
-        setOzone(other.getOzone());
-      }
-      if (other.getNitrogenDioxide() != 0F) {
-        setNitrogenDioxide(other.getNitrogenDioxide());
-      }
-      if (other.getSulfurDioxide() != 0F) {
-        setSulfurDioxide(other.getSulfurDioxide());
-      }
-      if (other.getTimestamp() != 0L) {
-        setTimestamp(other.getTimestamp());
-      }
-      if (!other.getMessage().isEmpty()) {
-        message_ = other.message_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -670,11 +439,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ds.airqualityservice.Alert parsedMessage = null;
+      ds.airqualityservice.GetHistoricalDataResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ds.airqualityservice.Alert) e.getUnfinishedMessage();
+        parsedMessage = (ds.airqualityservice.GetHistoricalDataResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -778,205 +547,6 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-
-    private float pm10_ ;
-    /**
-     * <code>float pm10 = 3;</code>
-     */
-    public float getPm10() {
-      return pm10_;
-    }
-    /**
-     * <code>float pm10 = 3;</code>
-     */
-    public Builder setPm10(float value) {
-      
-      pm10_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>float pm10 = 3;</code>
-     */
-    public Builder clearPm10() {
-      
-      pm10_ = 0F;
-      onChanged();
-      return this;
-    }
-
-    private float ozone_ ;
-    /**
-     * <code>float ozone = 4;</code>
-     */
-    public float getOzone() {
-      return ozone_;
-    }
-    /**
-     * <code>float ozone = 4;</code>
-     */
-    public Builder setOzone(float value) {
-      
-      ozone_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>float ozone = 4;</code>
-     */
-    public Builder clearOzone() {
-      
-      ozone_ = 0F;
-      onChanged();
-      return this;
-    }
-
-    private float nitrogenDioxide_ ;
-    /**
-     * <code>float nitrogen_dioxide = 5;</code>
-     */
-    public float getNitrogenDioxide() {
-      return nitrogenDioxide_;
-    }
-    /**
-     * <code>float nitrogen_dioxide = 5;</code>
-     */
-    public Builder setNitrogenDioxide(float value) {
-      
-      nitrogenDioxide_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>float nitrogen_dioxide = 5;</code>
-     */
-    public Builder clearNitrogenDioxide() {
-      
-      nitrogenDioxide_ = 0F;
-      onChanged();
-      return this;
-    }
-
-    private float sulfurDioxide_ ;
-    /**
-     * <code>float sulfur_dioxide = 6;</code>
-     */
-    public float getSulfurDioxide() {
-      return sulfurDioxide_;
-    }
-    /**
-     * <code>float sulfur_dioxide = 6;</code>
-     */
-    public Builder setSulfurDioxide(float value) {
-      
-      sulfurDioxide_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>float sulfur_dioxide = 6;</code>
-     */
-    public Builder clearSulfurDioxide() {
-      
-      sulfurDioxide_ = 0F;
-      onChanged();
-      return this;
-    }
-
-    private long timestamp_ ;
-    /**
-     * <code>int64 timestamp = 7;</code>
-     */
-    public long getTimestamp() {
-      return timestamp_;
-    }
-    /**
-     * <code>int64 timestamp = 7;</code>
-     */
-    public Builder setTimestamp(long value) {
-      
-      timestamp_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 timestamp = 7;</code>
-     */
-    public Builder clearTimestamp() {
-      
-      timestamp_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object message_ = "";
-    /**
-     * <code>string message = 8;</code>
-     */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string message = 8;</code>
-     */
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string message = 8;</code>
-     */
-    public Builder setMessage(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      message_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 8;</code>
-     */
-    public Builder clearMessage() {
-      
-      message_ = getDefaultInstance().getMessage();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 8;</code>
-     */
-    public Builder setMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      message_ = value;
-      onChanged();
-      return this;
-    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -990,41 +560,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:airquality.Alert)
+    // @@protoc_insertion_point(builder_scope:airquality.GetHistoricalDataResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:airquality.Alert)
-  private static final ds.airqualityservice.Alert DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:airquality.GetHistoricalDataResponse)
+  private static final ds.airqualityservice.GetHistoricalDataResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ds.airqualityservice.Alert();
+    DEFAULT_INSTANCE = new ds.airqualityservice.GetHistoricalDataResponse();
   }
 
-  public static ds.airqualityservice.Alert getDefaultInstance() {
+  public static ds.airqualityservice.GetHistoricalDataResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Alert>
-      PARSER = new com.google.protobuf.AbstractParser<Alert>() {
+  private static final com.google.protobuf.Parser<GetHistoricalDataResponse>
+      PARSER = new com.google.protobuf.AbstractParser<GetHistoricalDataResponse>() {
     @java.lang.Override
-    public Alert parsePartialFrom(
+    public GetHistoricalDataResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Alert(input, extensionRegistry);
+      return new GetHistoricalDataResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<Alert> parser() {
+  public static com.google.protobuf.Parser<GetHistoricalDataResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Alert> getParserForType() {
+  public com.google.protobuf.Parser<GetHistoricalDataResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public ds.airqualityservice.Alert getDefaultInstanceForType() {
+  public ds.airqualityservice.GetHistoricalDataResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

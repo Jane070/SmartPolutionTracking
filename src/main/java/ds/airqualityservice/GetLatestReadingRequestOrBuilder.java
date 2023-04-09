@@ -8,12 +8,12 @@ public interface GetLatestReadingRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string sensor_id = 1;</code>
+   * <code>string latestreading = 1;</code>
    */
-  java.lang.String getSensorId();
+  java.lang.String getLatestreading();
   /**
-   * <code>string sensor_id = 1;</code>
+   * <code>string latestreading = 1;</code>
    */
   com.google.protobuf.ByteString
-      getSensorIdBytes();
+      getLatestreadingBytes();
 }

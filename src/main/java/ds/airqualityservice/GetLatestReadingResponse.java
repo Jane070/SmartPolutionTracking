@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetLatestReadingResponse() {
+    pm25_ = 0;
   }
 
   @java.lang.Override
@@ -42,17 +43,9 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            ds.airqualityservice.AirQualityReading.Builder subBuilder = null;
-            if (reading_ != null) {
-              subBuilder = reading_.toBuilder();
-            }
-            reading_ = input.readMessage(ds.airqualityservice.AirQualityReading.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(reading_);
-              reading_ = subBuilder.buildPartial();
-            }
+          case 8: {
 
+            pm25_ = input.readInt32();
             break;
           }
           default: {
@@ -87,25 +80,13 @@ private static final long serialVersionUID = 0L;
             ds.airqualityservice.GetLatestReadingResponse.class, ds.airqualityservice.GetLatestReadingResponse.Builder.class);
   }
 
-  public static final int READING_FIELD_NUMBER = 1;
-  private ds.airqualityservice.AirQualityReading reading_;
+  public static final int PM2_5_FIELD_NUMBER = 1;
+  private int pm25_;
   /**
-   * <code>.airquality.AirQualityReading reading = 1;</code>
+   * <code>int32 pm2_5 = 1;</code>
    */
-  public boolean hasReading() {
-    return reading_ != null;
-  }
-  /**
-   * <code>.airquality.AirQualityReading reading = 1;</code>
-   */
-  public ds.airqualityservice.AirQualityReading getReading() {
-    return reading_ == null ? ds.airqualityservice.AirQualityReading.getDefaultInstance() : reading_;
-  }
-  /**
-   * <code>.airquality.AirQualityReading reading = 1;</code>
-   */
-  public ds.airqualityservice.AirQualityReadingOrBuilder getReadingOrBuilder() {
-    return getReading();
+  public int getPm25() {
+    return pm25_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -122,8 +103,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (reading_ != null) {
-      output.writeMessage(1, getReading());
+    if (pm25_ != 0) {
+      output.writeInt32(1, pm25_);
     }
     unknownFields.writeTo(output);
   }
@@ -134,9 +115,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (reading_ != null) {
+    if (pm25_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getReading());
+        .computeInt32Size(1, pm25_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,11 +135,8 @@ private static final long serialVersionUID = 0L;
     ds.airqualityservice.GetLatestReadingResponse other = (ds.airqualityservice.GetLatestReadingResponse) obj;
 
     boolean result = true;
-    result = result && (hasReading() == other.hasReading());
-    if (hasReading()) {
-      result = result && getReading()
-          .equals(other.getReading());
-    }
+    result = result && (getPm25()
+        == other.getPm25());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -170,10 +148,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasReading()) {
-      hash = (37 * hash) + READING_FIELD_NUMBER;
-      hash = (53 * hash) + getReading().hashCode();
-    }
+    hash = (37 * hash) + PM2_5_FIELD_NUMBER;
+    hash = (53 * hash) + getPm25();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -307,12 +283,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (readingBuilder_ == null) {
-        reading_ = null;
-      } else {
-        reading_ = null;
-        readingBuilder_ = null;
-      }
+      pm25_ = 0;
+
       return this;
     }
 
@@ -339,11 +311,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public ds.airqualityservice.GetLatestReadingResponse buildPartial() {
       ds.airqualityservice.GetLatestReadingResponse result = new ds.airqualityservice.GetLatestReadingResponse(this);
-      if (readingBuilder_ == null) {
-        result.reading_ = reading_;
-      } else {
-        result.reading_ = readingBuilder_.build();
-      }
+      result.pm25_ = pm25_;
       onBuilt();
       return result;
     }
@@ -392,8 +360,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(ds.airqualityservice.GetLatestReadingResponse other) {
       if (other == ds.airqualityservice.GetLatestReadingResponse.getDefaultInstance()) return this;
-      if (other.hasReading()) {
-        mergeReading(other.getReading());
+      if (other.getPm25() != 0) {
+        setPm25(other.getPm25());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -424,121 +392,30 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private ds.airqualityservice.AirQualityReading reading_ = null;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        ds.airqualityservice.AirQualityReading, ds.airqualityservice.AirQualityReading.Builder, ds.airqualityservice.AirQualityReadingOrBuilder> readingBuilder_;
+    private int pm25_ ;
     /**
-     * <code>.airquality.AirQualityReading reading = 1;</code>
+     * <code>int32 pm2_5 = 1;</code>
      */
-    public boolean hasReading() {
-      return readingBuilder_ != null || reading_ != null;
+    public int getPm25() {
+      return pm25_;
     }
     /**
-     * <code>.airquality.AirQualityReading reading = 1;</code>
+     * <code>int32 pm2_5 = 1;</code>
      */
-    public ds.airqualityservice.AirQualityReading getReading() {
-      if (readingBuilder_ == null) {
-        return reading_ == null ? ds.airqualityservice.AirQualityReading.getDefaultInstance() : reading_;
-      } else {
-        return readingBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.airquality.AirQualityReading reading = 1;</code>
-     */
-    public Builder setReading(ds.airqualityservice.AirQualityReading value) {
-      if (readingBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        reading_ = value;
-        onChanged();
-      } else {
-        readingBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.airquality.AirQualityReading reading = 1;</code>
-     */
-    public Builder setReading(
-        ds.airqualityservice.AirQualityReading.Builder builderForValue) {
-      if (readingBuilder_ == null) {
-        reading_ = builderForValue.build();
-        onChanged();
-      } else {
-        readingBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.airquality.AirQualityReading reading = 1;</code>
-     */
-    public Builder mergeReading(ds.airqualityservice.AirQualityReading value) {
-      if (readingBuilder_ == null) {
-        if (reading_ != null) {
-          reading_ =
-            ds.airqualityservice.AirQualityReading.newBuilder(reading_).mergeFrom(value).buildPartial();
-        } else {
-          reading_ = value;
-        }
-        onChanged();
-      } else {
-        readingBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.airquality.AirQualityReading reading = 1;</code>
-     */
-    public Builder clearReading() {
-      if (readingBuilder_ == null) {
-        reading_ = null;
-        onChanged();
-      } else {
-        reading_ = null;
-        readingBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.airquality.AirQualityReading reading = 1;</code>
-     */
-    public ds.airqualityservice.AirQualityReading.Builder getReadingBuilder() {
+    public Builder setPm25(int value) {
       
+      pm25_ = value;
       onChanged();
-      return getReadingFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.airquality.AirQualityReading reading = 1;</code>
+     * <code>int32 pm2_5 = 1;</code>
      */
-    public ds.airqualityservice.AirQualityReadingOrBuilder getReadingOrBuilder() {
-      if (readingBuilder_ != null) {
-        return readingBuilder_.getMessageOrBuilder();
-      } else {
-        return reading_ == null ?
-            ds.airqualityservice.AirQualityReading.getDefaultInstance() : reading_;
-      }
-    }
-    /**
-     * <code>.airquality.AirQualityReading reading = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        ds.airqualityservice.AirQualityReading, ds.airqualityservice.AirQualityReading.Builder, ds.airqualityservice.AirQualityReadingOrBuilder> 
-        getReadingFieldBuilder() {
-      if (readingBuilder_ == null) {
-        readingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ds.airqualityservice.AirQualityReading, ds.airqualityservice.AirQualityReading.Builder, ds.airqualityservice.AirQualityReadingOrBuilder>(
-                getReading(),
-                getParentForChildren(),
-                isClean());
-        reading_ = null;
-      }
-      return readingBuilder_;
+    public Builder clearPm25() {
+      
+      pm25_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

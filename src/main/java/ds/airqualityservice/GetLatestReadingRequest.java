@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetLatestReadingRequest() {
-    sensorId_ = "";
+    latestreading_ = "";
   }
 
   @java.lang.Override
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            sensorId_ = s;
+            latestreading_ = s;
             break;
           }
           default: {
@@ -81,34 +81,34 @@ private static final long serialVersionUID = 0L;
             ds.airqualityservice.GetLatestReadingRequest.class, ds.airqualityservice.GetLatestReadingRequest.Builder.class);
   }
 
-  public static final int SENSOR_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sensorId_;
+  public static final int LATESTREADING_FIELD_NUMBER = 1;
+  private volatile java.lang.Object latestreading_;
   /**
-   * <code>string sensor_id = 1;</code>
+   * <code>string latestreading = 1;</code>
    */
-  public java.lang.String getSensorId() {
-    java.lang.Object ref = sensorId_;
+  public java.lang.String getLatestreading() {
+    java.lang.Object ref = latestreading_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      sensorId_ = s;
+      latestreading_ = s;
       return s;
     }
   }
   /**
-   * <code>string sensor_id = 1;</code>
+   * <code>string latestreading = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getSensorIdBytes() {
-    java.lang.Object ref = sensorId_;
+      getLatestreadingBytes() {
+    java.lang.Object ref = latestreading_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      sensorId_ = b;
+      latestreading_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSensorIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sensorId_);
+    if (!getLatestreadingBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, latestreading_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSensorIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sensorId_);
+    if (!getLatestreadingBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, latestreading_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -160,8 +160,8 @@ private static final long serialVersionUID = 0L;
     ds.airqualityservice.GetLatestReadingRequest other = (ds.airqualityservice.GetLatestReadingRequest) obj;
 
     boolean result = true;
-    result = result && getSensorId()
-        .equals(other.getSensorId());
+    result = result && getLatestreading()
+        .equals(other.getLatestreading());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,8 +173,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SENSOR_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getSensorId().hashCode();
+    hash = (37 * hash) + LATESTREADING_FIELD_NUMBER;
+    hash = (53 * hash) + getLatestreading().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      sensorId_ = "";
+      latestreading_ = "";
 
       return this;
     }
@@ -336,7 +336,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public ds.airqualityservice.GetLatestReadingRequest buildPartial() {
       ds.airqualityservice.GetLatestReadingRequest result = new ds.airqualityservice.GetLatestReadingRequest(this);
-      result.sensorId_ = sensorId_;
+      result.latestreading_ = latestreading_;
       onBuilt();
       return result;
     }
@@ -385,8 +385,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(ds.airqualityservice.GetLatestReadingRequest other) {
       if (other == ds.airqualityservice.GetLatestReadingRequest.getDefaultInstance()) return this;
-      if (!other.getSensorId().isEmpty()) {
-        sensorId_ = other.sensorId_;
+      if (!other.getLatestreading().isEmpty()) {
+        latestreading_ = other.latestreading_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -418,71 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object sensorId_ = "";
+    private java.lang.Object latestreading_ = "";
     /**
-     * <code>string sensor_id = 1;</code>
+     * <code>string latestreading = 1;</code>
      */
-    public java.lang.String getSensorId() {
-      java.lang.Object ref = sensorId_;
+    public java.lang.String getLatestreading() {
+      java.lang.Object ref = latestreading_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sensorId_ = s;
+        latestreading_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string sensor_id = 1;</code>
+     * <code>string latestreading = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getSensorIdBytes() {
-      java.lang.Object ref = sensorId_;
+        getLatestreadingBytes() {
+      java.lang.Object ref = latestreading_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sensorId_ = b;
+        latestreading_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string sensor_id = 1;</code>
+     * <code>string latestreading = 1;</code>
      */
-    public Builder setSensorId(
+    public Builder setLatestreading(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      sensorId_ = value;
+      latestreading_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string sensor_id = 1;</code>
+     * <code>string latestreading = 1;</code>
      */
-    public Builder clearSensorId() {
+    public Builder clearLatestreading() {
       
-      sensorId_ = getDefaultInstance().getSensorId();
+      latestreading_ = getDefaultInstance().getLatestreading();
       onChanged();
       return this;
     }
     /**
-     * <code>string sensor_id = 1;</code>
+     * <code>string latestreading = 1;</code>
      */
-    public Builder setSensorIdBytes(
+    public Builder setLatestreadingBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      sensorId_ = value;
+      latestreading_ = value;
       onChanged();
       return this;
     }

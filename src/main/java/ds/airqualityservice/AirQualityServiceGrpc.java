@@ -63,21 +63,21 @@ public final class AirQualityServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<ds.airqualityservice.GetHistoricalDataRequest,
-      ds.airqualityservice.AirQualityReading> getGetHistoricalDataMethod;
+      ds.airqualityservice.GetHistoricalDataResponse> getGetHistoricalDataMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetHistoricalData",
       requestType = ds.airqualityservice.GetHistoricalDataRequest.class,
-      responseType = ds.airqualityservice.AirQualityReading.class,
+      responseType = ds.airqualityservice.GetHistoricalDataResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<ds.airqualityservice.GetHistoricalDataRequest,
-      ds.airqualityservice.AirQualityReading> getGetHistoricalDataMethod() {
-    io.grpc.MethodDescriptor<ds.airqualityservice.GetHistoricalDataRequest, ds.airqualityservice.AirQualityReading> getGetHistoricalDataMethod;
+      ds.airqualityservice.GetHistoricalDataResponse> getGetHistoricalDataMethod() {
+    io.grpc.MethodDescriptor<ds.airqualityservice.GetHistoricalDataRequest, ds.airqualityservice.GetHistoricalDataResponse> getGetHistoricalDataMethod;
     if ((getGetHistoricalDataMethod = AirQualityServiceGrpc.getGetHistoricalDataMethod) == null) {
       synchronized (AirQualityServiceGrpc.class) {
         if ((getGetHistoricalDataMethod = AirQualityServiceGrpc.getGetHistoricalDataMethod) == null) {
           AirQualityServiceGrpc.getGetHistoricalDataMethod = getGetHistoricalDataMethod = 
-              io.grpc.MethodDescriptor.<ds.airqualityservice.GetHistoricalDataRequest, ds.airqualityservice.AirQualityReading>newBuilder()
+              io.grpc.MethodDescriptor.<ds.airqualityservice.GetHistoricalDataRequest, ds.airqualityservice.GetHistoricalDataResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "airquality.AirQualityService", "GetHistoricalData"))
@@ -85,7 +85,7 @@ public final class AirQualityServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   ds.airqualityservice.GetHistoricalDataRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ds.airqualityservice.AirQualityReading.getDefaultInstance()))
+                  ds.airqualityservice.GetHistoricalDataResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new AirQualityServiceMethodDescriptorSupplier("GetHistoricalData"))
                   .build();
           }
@@ -134,7 +134,7 @@ public final class AirQualityServiceGrpc {
     /**
      */
     public void getHistoricalData(ds.airqualityservice.GetHistoricalDataRequest request,
-        io.grpc.stub.StreamObserver<ds.airqualityservice.AirQualityReading> responseObserver) {
+        io.grpc.stub.StreamObserver<ds.airqualityservice.GetHistoricalDataResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetHistoricalDataMethod(), responseObserver);
     }
 
@@ -152,7 +152,7 @@ public final class AirQualityServiceGrpc {
             asyncServerStreamingCall(
               new MethodHandlers<
                 ds.airqualityservice.GetHistoricalDataRequest,
-                ds.airqualityservice.AirQualityReading>(
+                ds.airqualityservice.GetHistoricalDataResponse>(
                   this, METHODID_GET_HISTORICAL_DATA)))
           .build();
     }
@@ -190,7 +190,7 @@ public final class AirQualityServiceGrpc {
     /**
      */
     public void getHistoricalData(ds.airqualityservice.GetHistoricalDataRequest request,
-        io.grpc.stub.StreamObserver<ds.airqualityservice.AirQualityReading> responseObserver) {
+        io.grpc.stub.StreamObserver<ds.airqualityservice.GetHistoricalDataResponse> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getGetHistoricalDataMethod(), getCallOptions()), request, responseObserver);
     }
@@ -226,7 +226,7 @@ public final class AirQualityServiceGrpc {
 
     /**
      */
-    public java.util.Iterator<ds.airqualityservice.AirQualityReading> getHistoricalData(
+    public java.util.Iterator<ds.airqualityservice.GetHistoricalDataResponse> getHistoricalData(
         ds.airqualityservice.GetHistoricalDataRequest request) {
       return blockingServerStreamingCall(
           getChannel(), getGetHistoricalDataMethod(), getCallOptions(), request);
@@ -289,7 +289,7 @@ public final class AirQualityServiceGrpc {
           break;
         case METHODID_GET_HISTORICAL_DATA:
           serviceImpl.getHistoricalData((ds.airqualityservice.GetHistoricalDataRequest) request,
-              (io.grpc.stub.StreamObserver<ds.airqualityservice.AirQualityReading>) responseObserver);
+              (io.grpc.stub.StreamObserver<ds.airqualityservice.GetHistoricalDataResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();

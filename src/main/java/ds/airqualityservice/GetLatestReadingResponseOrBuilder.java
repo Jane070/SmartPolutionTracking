@@ -8,15 +8,7 @@ public interface GetLatestReadingResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.airquality.AirQualityReading reading = 1;</code>
+   * <code>int32 pm2_5 = 1;</code>
    */
-  boolean hasReading();
-  /**
-   * <code>.airquality.AirQualityReading reading = 1;</code>
-   */
-  ds.airqualityservice.AirQualityReading getReading();
-  /**
-   * <code>.airquality.AirQualityReading reading = 1;</code>
-   */
-  ds.airqualityservice.AirQualityReadingOrBuilder getReadingOrBuilder();
+  int getPm25();
 }
