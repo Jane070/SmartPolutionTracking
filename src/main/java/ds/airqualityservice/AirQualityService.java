@@ -1,16 +1,17 @@
 package ds.airqualityservice;
 
 import java.io.FileInputStream;
+//import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
 import java.util.Properties;
+import java.util.Random;
 
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceInfo;
 
 import ds.airqualityservice.AirQualityServiceGrpc.AirQualityServiceImplBase;
-import grpc.example.helloworld.HelloReply;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
@@ -109,8 +110,8 @@ public class AirQualityService extends AirQualityServiceImplBase{
 		
 	}
 
-	public void getLatestReading (GetLatestReadingRequest request, StreamObserver<GetLatestReadingResponse> responseObserver) {
-		System.out.println("---Receiving Get Latest Reading Request from Client ---");
+	public void getLatestReading (GetLatestReadingRequest request, StreamObserver<GetLatestReadingResponse> responseObserver){
+		System.out.println("---Receiving get latest reading request from client ---");
 		
 		int latestReadingString = 50;
 		
@@ -119,7 +120,33 @@ public class AirQualityService extends AirQualityServiceImplBase{
 		responseObserver.onNext(reply);
 		responseObserver.onCompleted(); 
 } 
-
+	
+	public void getHistoricalData(GetHistoricalDataRequest request, StreamObserver<GetHistoricalDataResponse> responseObserver) {
+		
+		System.out.printf("The last %d days historial data ", request.getNumDays());
+		
+		Random rand = new Random();
+		
+		for (int i = 0; i < request.getNumDays(); i++) {
+			
+			int pm2_5 = rand.nextInt(100);
+			
+			GetHistoricalDataResponse reply = GetHistoricalDataResponse.newBuilder().setPm25(pm2_5).build();
+			
+			responseObserver.onNext(reply);
+		
+		
+		try {
+			//wait for a second
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+		responseObserver.onCompleted();
+}
+			
 }
 
 

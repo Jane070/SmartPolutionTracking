@@ -28,7 +28,7 @@ message GetHistoricalDataRequest {
 
 message GetHistoricalDataResponse {
   string sensor_id = 1;
-  float pm2_5 = 2;
+  int32 pm2_5 = 2;
 }
 
 //message Alert {
