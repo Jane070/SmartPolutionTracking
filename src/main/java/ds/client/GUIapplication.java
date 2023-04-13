@@ -63,6 +63,7 @@ public GUIapplication() {
 		String host = airQualityServiceInfo.getHostAddresses()[0];
 		int port = airQualityServiceInfo.getPort();
 		
+		
 		ManagedChannel channel = ManagedChannelBuilder
 				.forAddress(host, port)
 				.usePlaintext()
